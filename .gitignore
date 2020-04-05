@@ -1,0 +1,3 @@
+cases
+*.swp
+src/__pycache__/
