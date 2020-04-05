@@ -6,7 +6,7 @@ from scheduler import Scheduler
 def getopt():
     parser = ArgumentParser()
     parser.add_argument('-i', '--input', dest='input', type=str, required=True, 
-            help="mode, 1) input file for test")
+            help="input, input file for test")
     args = parser.parse_args()
     return args
 
