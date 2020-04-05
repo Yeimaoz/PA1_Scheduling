@@ -44,6 +44,17 @@ class Scheduler:
             f.close()
         self.G = G
 
+    def evaluate_level(self):
+        def backtrack_evaluate_level(cur):
+            if cur.level != -1:
+                return cur.level
+            cur.level = 1 + max([backtrack_evaluate_level(fanin) for fanin in cur.fanins])
+            return cur.level
+        print("Evaluating level ...")
+        self.G[0].level = 0
+        backtrack_evaluate_level(self.G[-1])
+        self.G.information() 
+    
     def information(self):
         print("Adders: %d" % self.resources[0])
         print("Multiplier: %d" % self.resources[1])

@@ -14,3 +14,4 @@ if __name__ == '__main__':
     args = getopt()
     test = Scheduler()
     test.load_graph(args.input)
+    test.evaluate_level()
